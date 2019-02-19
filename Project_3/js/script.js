@@ -1,4 +1,4 @@
-// Limit the time when select an event (e.g scroll)
+// Limit the time when detect an event (e.g scroll)
 function debounce(func, wait = 20, immediate = true) {
   var timeout;
   return function () {
@@ -19,9 +19,9 @@ function debounce(func, wait = 20, immediate = true) {
 
 // Select all of the slide-in class
 const sliderImages = document.querySelectorAll('.slide-in');
-let image = document.querySelector('.featured .row');
+let image = document.querySelector('.featured');
 // console.log(image.height);
-let slideIn = image.height;
+let slideIn = image.offsetHeight;
 console.log(slideIn);
 
 // console.log(sliderImages.height);
@@ -31,9 +31,9 @@ function checkSlide(e) {
   // console.log(window.scrollY);
   sliderImages.forEach(sliderImage => {
     // Check position
-    const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
+    const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.offsetHeight / 2;
     console.log(slideInAt);
-    const imageBottom = sliderImage.offsetTop + sliderImage.height;
+    const imageBottom = sliderImage.offsetTop + sliderImage.offsetHeight;
 
     const isHalfShown = slideInAt > sliderImage.offsetTop;
     const isNotScrolledPast = window.scrollY < imageBottom;

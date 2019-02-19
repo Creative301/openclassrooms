@@ -246,7 +246,6 @@ img {
   border-top: 3px dotted var(--blue2);
   border-bottom: 3px dotted var(--blue2);
 }
-
 /* End Overview */
 
 
@@ -323,7 +322,7 @@ img {
 }
 
 .slide-in {
-  /* opacity:0; */
+  opacity:0;
   transition: all .5s;
 }
 
@@ -638,5 +637,34 @@ footer {
 
 
 /* Announcement page */
+.annoucement-page-1, 
+.annoucement-page-2 {
+  margin: 70px 0;
+}
 
+.annoucement-page-1 .col-md-6:first-child, 
+.annoucement-page-2 .col-md-6:first-child {
+  background-size: cover;
+  height: 333px;
+}
+
+.annoucement-page-1 .col-md-6:first-child {
+  background: url("../images/announcement_page_1.jpg") no-repeat center;
+}
+
+.annoucement-page-1 h1,
+.annoucement-page-2 h1 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+}
+
+.annoucement-page-1 p,
+.annoucement-page-2 p {
+  font-size: 1.4rem;
+  line-height: 2.1;
+}
+
+.annoucement-page-2 .col-md-6:first-child {
+  background: url("../images/announcement_page_2.jpg") no-repeat center;
+}
 /* End Announcement page */

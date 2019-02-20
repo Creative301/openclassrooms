@@ -15,16 +15,14 @@ function debounce(func, wait = 20, immediate = true) {
   };
 }
 
-// Not fix yet
-
 // Select all of the slide-in class
 const sliderImages = document.querySelectorAll('.slide-in');
 let image = document.querySelector('.featured');
 // console.log(image.height);
 let slideIn = image.offsetHeight;
 console.log(slideIn);
-
 // console.log(sliderImages.height);
+
 function checkSlide(e) {
   // console.log(e);
   // console.count(e);

@@ -85,7 +85,6 @@ img {
   color: var(--blue1);
   border-bottom: 2px solid var(--blue1);
 }
-
 /* End Header */
 
 
@@ -132,14 +131,12 @@ img {
 }
 
 @media (min-width: 768px) {
-
   .hero-inner h1,
   .hero-inner h2,
   .hero-inner h3 {
     font-size: 4.5rem;
   }
 }
-
 /* End Hero */
 
 
@@ -168,7 +165,6 @@ img {
 .fa-hourglass-half {
   color: #ED553B;
 }
-
 /* End Info */
 
 
@@ -229,7 +225,6 @@ img {
 .overview2 {
   display: flex;
   align-items: center;
-
 }
 
 @media (min-width: 768px) {
@@ -322,7 +317,7 @@ img {
 }
 
 .slide-in {
-  opacity:0;
+  opacity: 0;
   transition: all .5s;
 }
 
@@ -334,7 +329,6 @@ img {
   opacity: 1;
   transform: translateX(0%) scale(1);
 }
-
 /* End Featured Films */
 
 
@@ -360,7 +354,6 @@ img {
 .announcements2 {
   padding: 25px;
 }
-
 /* End Announcements */
 
 
@@ -411,13 +404,11 @@ img {
   font-weight: bold;
 }
 
-/* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   .registration form {
     padding: 0 250px;
   }
 }
-
 /* End Registration */
 
 /* Footer */
@@ -448,7 +439,6 @@ footer {
 .footer1 ul li {
   list-style: none;
 }
-
 
 .social a {
   color: var(--white1);
@@ -550,12 +540,10 @@ footer {
     text-align: left;
   }
 }
-
 /* End Footer */
 
 
 /* Contact Page */
-
 /* Contact banner section */
 .contact {
   background: url(../images/Hero_Banner.jpg) no-repeat center;
@@ -575,25 +563,24 @@ footer {
 /* Contact Detail section */
 .contact-detail .col-md-6:last-child {
   text-align: left;
-  display: flex;
-  /* align-items: center; */
+  /*   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: column; */
 }
 
 .contact-detail h2 {
   font-size: 3rem;
+  margin-top: 90px;
   margin-bottom: 15px;
 }
 
 .contact-detail p {
   font-size: 1.6rem;
 }
-
 /* End Contact Detail section */
 
 .contact-form {
-  margin-bottom: 70px;
+  margin: 70px 0;
 }
 
 @media (min-width: 992px) {
@@ -632,17 +619,17 @@ footer {
 
 .contact-form .btn-primary:hover {
   background-color: var(--blue1);
-} 
+}
 /* End Contact Page */
 
 
 /* Announcement page */
-.annoucement-page-1, 
+.annoucement-page-1,
 .annoucement-page-2 {
   margin: 70px 0;
 }
 
-.annoucement-page-1 .col-md-6:first-child, 
+.annoucement-page-1 .col-md-6:first-child,
 .annoucement-page-2 .col-md-6:first-child {
   background-size: cover;
   height: 333px;
@@ -668,3 +655,28 @@ footer {
   background: url("../images/announcement_page_2.jpg") no-repeat center;
 }
 /* End Announcement page */
+
+
+/* Privacy policy page */
+.privacy {
+  margin: 70px 0;
+}
+
+@media (min-width: 768px) {
+  .privacy {
+    padding: 0 100px;
+  }
+}
+
+.privacy h1 {
+  color: var(--blue2);
+  font-size: 3rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+.privacy p {
+  font-size: 1.6rem;
+}
+/* End Privacy policy page */

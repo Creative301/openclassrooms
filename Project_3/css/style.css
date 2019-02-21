@@ -1,12 +1,10 @@
 /* CSS Variables */
 :root {
-  --blue1: #00aeef;
-  --blue2: #162b63;
+  --blue-light: #00aeef;
+  --blue-dark: #162b63;
   --white1: #ffffff;
-  --white2: #f7f7f7;
-  --black1: #333333;
-  --black2: #161616;
-  --black3: #2d2d2d;
+  --white-dark: #f7f7f7;
+  --grey-dark: #333333;
 }
 
 /* CSS Reset */
@@ -37,7 +35,7 @@ html {
 body {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
-  color: var(--black1);
+  color: var(--grey-dark);
 }
 
 img {
@@ -61,7 +59,7 @@ img {
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: var(--blue2);
+  color: var(--blue-dark);
   font-size: 1.6rem;
   font-weight: 400;
   border-bottom: 2px solid #fff;
@@ -82,8 +80,8 @@ img {
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-  color: var(--blue1);
-  border-bottom: 2px solid var(--blue1);
+  color: var(--blue-light);
+  border-bottom: 2px solid var(--blue-light);
 }
 /* End Header */
 
@@ -98,7 +96,7 @@ img {
   justify-content: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 575.98px) {
   .hero {
     background: url(../images/Hero_Banner_small.jpg) no-repeat center;
     height: 50vh;
@@ -113,7 +111,7 @@ img {
 
 .hero-inner {
   padding: 30px;
-  color: var(--white2);
+  color: var(--white-dark);
   background-color: rgba(0, 174, 239, .5);
 }
 
@@ -170,7 +168,7 @@ img {
 
 /* Overview */
 .overview {
-  background-color: var(--blue1);
+  background-color: var(--blue-light);
   color: var(--white1);
   padding: 50px 0;
   margin-bottom: 80px;
@@ -197,7 +195,7 @@ img {
 }
 
 .overview1-inner1 {
-  border-bottom: 3px dotted var(--blue2);
+  border-bottom: 3px dotted var(--blue-dark);
 }
 
 .overview1-text1 {
@@ -229,7 +227,7 @@ img {
 
 @media (min-width: 768px) {
   .overview2 {
-    border-left: 3px dotted var(--blue2);
+    border-left: 3px dotted var(--blue-dark);
     padding-left: 40px;
   }
 }
@@ -238,8 +236,8 @@ img {
   padding: 30px 0;
   font-size: 2.4rem;
   font-weight: 400;
-  border-top: 3px dotted var(--blue2);
-  border-bottom: 3px dotted var(--blue2);
+  border-top: 3px dotted var(--blue-dark);
+  border-bottom: 3px dotted var(--blue-dark);
 }
 /* End Overview */
 
@@ -261,7 +259,7 @@ img {
   font-size: 3rem;
   font-weight: 500;
   margin-bottom: 40px;
-  color: var(--blue2);
+  color: var(--blue-dark);
 }
 
 .featured_thumb {
@@ -342,7 +340,7 @@ img {
   font-size: 3rem;
   font-weight: 500;
   margin-bottom: 40px;
-  color: var(--blue2);
+  color: var(--blue-dark);
 }
 
 .announcements figcaption {
@@ -366,7 +364,7 @@ img {
   font-size: 3rem;
   font-weight: 500;
   margin-bottom: 40px;
-  color: var(--blue2);
+  color: var(--blue-dark);
 }
 
 .registration p {
@@ -384,7 +382,7 @@ img {
 }
 
 .registration .form-control {
-  border-color: var(--blue2);
+  border-color: var(--blue-dark);
 }
 
 .form-group {
@@ -395,12 +393,12 @@ img {
   border: 0;
   border-radius: 5px;
   padding: 7px 20px;
-  background-color: var(--blue2);
+  background-color: var(--blue-dark);
 }
 
 .registration .btn-primary:hover {
-  background-color: var(--blue1);
-  color: var(--white2);
+  background-color: var(--blue-light);
+  color: var(--white-dark);
   font-weight: bold;
 }
 
@@ -413,9 +411,9 @@ img {
 
 /* Footer */
 footer {
-  border-top: 4px solid var(--blue1);
+  border-top: 4px solid var(--blue-light);
   color: var(--white1);
-  background-color: var(--black2);
+  background-color: #161616;
   padding: 60px 0 30px 0;
 }
 
@@ -433,7 +431,7 @@ footer {
 
 .footer1 ul li a:hover {
   text-decoration: none;
-  color: var(--blue1);
+  color: var(--blue-light);
 }
 
 .footer1 ul li {
@@ -445,7 +443,7 @@ footer {
 }
 
 .social a:hover {
-  color: var(--blue1);
+  color: var(--blue-light);
 }
 
 .fa-facebook-square,
@@ -471,13 +469,13 @@ footer {
 
 .footer1 form {
   font-size: 1.4rem;
-  color: var(--white2);
+  color: var(--white-dark);
   margin-top: 20px;
 }
 
 .footer1 form .form-control-lg {
   padding: 20px;
-  background-color: var(--black3);
+  background-color: #2d2d2d;
 }
 
 .footer1 .btn-primary {
@@ -485,12 +483,12 @@ footer {
   border: 0;
   border-radius: 5px;
   padding: 7px 20px;
-  background-color: var(--blue2);
+  background-color: var(--blue-dark);
 }
 
 .footer1 .btn-primary:hover {
-  background-color: var(--blue1);
-  color: var(--white2);
+  background-color: var(--blue-light);
+  color: var(--white-dark);
   font-weight: bold;
 }
 
@@ -509,7 +507,7 @@ footer {
 .footer2 .container {
   margin-top: 40px;
   padding-top: 30px;
-  border-top: 1px solid var(--blue1);
+  border-top: 1px solid var(--blue-light);
 }
 
 .footer2 p {
@@ -526,7 +524,7 @@ footer {
 }
 
 .footer2-right a:hover {
-  color: var(--blue1);
+  color: var(--blue-light);
   text-decoration: none;
 }
 
@@ -590,7 +588,7 @@ footer {
 }
 
 .contact-form h2 {
-  color: var(--blue2);
+  color: var(--blue-dark);
   font-size: 3rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -612,13 +610,13 @@ footer {
 .contact-form .btn-primary {
   padding: 7px 20px;
   border: 0;
-  color: var(--white2);
+  color: var(--white-dark);
   font-size: 1.4rem;
-  background-color: var(--blue2);
+  background-color: var(--blue-dark);
 }
 
 .contact-form .btn-primary:hover {
-  background-color: var(--blue1);
+  background-color: var(--blue-light);
 }
 /* End Contact Page */
 
@@ -669,7 +667,7 @@ footer {
 }
 
 .privacy h1 {
-  color: var(--blue2);
+  color: var(--blue-dark);
   font-size: 3rem;
   font-weight: 500;
   text-transform: uppercase;

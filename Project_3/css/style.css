@@ -2,7 +2,7 @@
 :root {
   --blue-light: #00aeef;
   --blue-dark: #162b63;
-  --white1: #ffffff;
+  --white: #ffffff;
   --white-dark: #f7f7f7;
   --grey-dark: #333333;
 }
@@ -83,7 +83,6 @@ img {
   color: var(--blue-light);
   border-bottom: 2px solid var(--blue-light);
 }
-
 /* End Header */
 
 
@@ -153,7 +152,6 @@ img {
     font-size: 3rem;
   }
 }
-
 /* End Hero */
 
 
@@ -192,20 +190,19 @@ img {
 .fa-hourglass-half {
   color: #ED553B;
 }
-
 /* End Info */
 
 
 /* Overview */
 .overview {
   background-color: var(--blue-light);
-  color: var(--white1);
+  color: var(--white);
   padding: 50px 0;
   margin-bottom: 80px;
 }
 
 .overview h2 {
-  color: var(--white1);
+  color: var(--white);
   font-size: 3rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -269,7 +266,6 @@ img {
   border-top: 3px dotted var(--blue-dark);
   border-bottom: 3px dotted var(--blue-dark);
 }
-
 /* End Overview */
 
 
@@ -321,7 +317,7 @@ img {
   padding: 1rem;
   line-height: 1.5;
   width: 100%;
-  color: var(--white1);
+  color: var(--white);
   background-color: rgba(255, 0, 0, .75);
   opacity: 0;
   transition: all .3s;
@@ -358,7 +354,6 @@ img {
   opacity: 1;
   transform: translateX(0%) scale(1);
 }
-
 /* End Featured Films */
 
 
@@ -389,7 +384,6 @@ img {
 .announcements2 {
   padding: 25px;
 }
-
 /* End Announcements */
 
 
@@ -445,13 +439,12 @@ img {
     padding: 0 250px;
   }
 }
-
 /* End Registration */
 
 /* Footer */
 footer {
   border-top: 4px solid var(--blue-light);
-  color: var(--white1);
+  color: var(--white);
   background-color: #161616;
   padding: 60px 0 30px 0;
 }
@@ -465,7 +458,7 @@ footer {
 .footer1 ul li a {
   font-size: 1.4rem;
   line-height: 2.857;
-  color: var(--white1);
+  color: var(--white);
 }
 
 .footer1 ul li a:hover {
@@ -478,7 +471,7 @@ footer {
 }
 
 .social a {
-  color: var(--white1);
+  color: var(--white);
 }
 
 .social a:hover {
@@ -559,7 +552,7 @@ footer {
 
 .footer2-right a {
   display: inline-block;
-  color: var(--white1);
+  color: var(--white);
 }
 
 .footer2-right a:hover {
@@ -577,7 +570,6 @@ footer {
     text-align: left;
   }
 }
-
 /* End Footer */
 
 
@@ -596,7 +588,6 @@ footer {
 .contact h1 {
   font-size: 5rem;
 }
-
 /* End Contact banner section */
 
 /* Contact Detail section */
@@ -629,7 +620,6 @@ footer {
     margin-top: 0;
   }
 }
-
 /* End Contact Detail section */
 
 .contact-form {
@@ -673,57 +663,7 @@ footer {
 .contact-form .btn-primary:hover {
   background-color: var(--blue-light);
 }
-
 /* End Contact Page */
-
-
-/* Announcement page */
-.annoucement-page-1,
-.annoucement-page-2 {
-  margin: 70px 0;
-}
-
-.annoucement-page-1 .col-md-6:first-child,
-.annoucement-page-2 .col-md-6:first-child {
-  background-size: cover;
-  height: 333px;
-}
-
-.annoucement-page-1 .col-md-6:first-child {
-  background: url("../images/announcement_page_1.jpg") no-repeat center;
-}
-
-.annoucement-page-1 h1,
-.annoucement-page-2 h1 {
-  font-size: 2.4rem;
-  margin-bottom: 20px;
-}
-
-@media (max-width: 767.98px) {
-
-  .annoucement-page-1 .col-md-6:last-child,
-  .annoucement-page-2 .col-md-6:last-child {
-    padding: 0 30px;
-  }
-
-  .annoucement-page-1 h1,
-  .annoucement-page-2 h1 {
-    margin-top: 20px;
-  }
-}
-
-.annoucement-page-1 p,
-.annoucement-page-2 p {
-  font-size: 1.4rem;
-  line-height: 2.1;
-}
-
-.annoucement-page-2 .col-md-6:first-child {
-  background: url("../images/announcement_page_2.jpg") no-repeat center;
-}
-
-/* End Announcement page */
-
 
 /* Privacy policy page */
 .privacy {
@@ -747,5 +687,4 @@ footer {
 .privacy p {
   font-size: 1.6rem;
 }
-
 /* End Privacy policy page */

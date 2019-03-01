@@ -51,7 +51,6 @@ img {
   width: 200px;
 }
 
-/* Large devices (desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .logo {
     width: 250px;
@@ -72,7 +71,6 @@ img {
   }
 }
 
-/* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .navbar-light .navbar-nav .nav-link {
     font-size: 1.4rem;
@@ -328,7 +326,6 @@ img {
   opacity: 1;
 }
 
-/* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
   .featured_caption {
     bottom: 0;
@@ -440,6 +437,7 @@ img {
   }
 }
 /* End Registration */
+
 
 /* Footer */
 footer {

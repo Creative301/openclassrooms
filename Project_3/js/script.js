@@ -1,4 +1,4 @@
-// SHow or hide the Featured Films section using the Intersection Observer API
+// Show or hide the Featured Films section using the Intersection Observer API
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if(entry.isIntersecting === true) {

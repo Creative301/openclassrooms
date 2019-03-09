@@ -1,0 +1,40 @@
+// Chef Name
+INSERT INTO `chef`(`chef_id`, `first_name`, `last_name`) VALUES
+(NULL, 'Gordon', 'Ramsay'),
+(NULL, 'Jamie', 'Oliver'),
+(NULL, 'Rachel', 'Ray'),
+(NULL, 'Bobby', 'Flay'),
+(NULL, 'Emeril', 'Lagasse');
+
+
+
+// Menu
+INSERT INTO `menu` (`menu_id`, `date`) VALUES 
+(NULL, '2019-03-09'),
+(NULL, '2019-03-10'),
+(NULL, '2019-03-11'),
+(NULL, '2019-03-12'),
+(NULL, '2019-03-13'),
+(NULL, '2019-03-14'),
+(NULL, '2019-03-15'),
+(NULL, '2019-03-16'),
+(NULL, '2019-03-17'),
+(NULL, '2019-03-18'),
+(NULL, '2019-03-19'),
+(NULL, '2019-03-20'),
+(NULL, '2019-03-21'),
+(NULL, '2019-03-22'),
+(NULL, '2019-03-23'),
+(NULL, '2019-03-24'),
+(NULL, '2019-03-25'),
+(NULL, '2019-03-26'),
+(NULL, '2019-03-27'),
+(NULL, '2019-03-28'),
+(NULL, '2019-03-29'),
+(NULL, '2019-03-30'),
+(NULL, '2019-03-31');
+
+
+// Menu item
+Main Dishes
+Desserts 

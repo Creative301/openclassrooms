@@ -1,3 +1,5 @@
+The name 'order' is a MySQL reserved keyword.
+
 // Chef Name
 INSERT INTO `chef`(`chef_id`, `first_name`, `last_name`) VALUES
 (NULL, 'Gordon', 'Ramsay'),
@@ -38,3 +40,13 @@ INSERT INTO `menu` (`menu_id`, `date`) VALUES
 // Menu item
 Main Dishes
 Desserts 
+
+
+
+
+// Order history
+CREATE TABLE `express_food`.`order_history`( `order_history_id` INT NOT NULL AUTO_INCREMENT, `customer_id` INT NOT NULL, `delivery_person_id` INT NOT NULL, `total_price` INT NOT NULL, `date` DATE NOT NULL, `order_time` TIME NOT NULL, `delivery_pickup_time` TIME NOT NULL, `arrival_estimation_time` TIME NOT NULL, `arrival_time` TIME NOT NULL, PRIMARY KEY(`order_history_id`) ) ENGINE = InnoDB
+
+
+
+

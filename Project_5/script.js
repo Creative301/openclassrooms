@@ -46,7 +46,7 @@ endMotivationalIndex = Math.floor(Math.random() * quoteNumber);
 motivationalQuote = `${motivationalQuoteText.beginningQuote[beginningMotivationalIndex]} ${motivationalQuoteText.middleQuote[middleMotivationalIndex]} ${motivationalQuoteText.endQuote[endMotivationalIndex]}`;
 
 init();
-output();
+// output();
 
 function output() {
     while(quoteType === 1) {
@@ -59,7 +59,7 @@ function runQuoteNumber() {
 }
 
 function runQuoteType() {
-    quoteType = parseInt(prompt('Please input the Quote type (1 = Motivational or 2 = Inspirational) ')); 
+    quoteType = parseInt(prompt('Please input the Quote type (1 = Motivational or 2 = Inspirational)')); 
 }
 
 function displayMotivationalQuote() {
@@ -74,4 +74,5 @@ function init() {
     console.log(quoteNumber);
     runQuoteType();
     console.log(quoteType);
+    console.log(beginningMotivationalIndex);
 }

@@ -1,29 +1,36 @@
-/* const beginningQuote = ["Whether you think you can", "The future is now", "Be who you are and say what you feel", "You only live once", "Do what you can"];
-const middleQuote = ["or whether you think you can't", "it's time to grow up and be strong", "but if you do it right", "with what you have"];
-const endQuote = ["you're right!", "tomorrow may well be too late", "once is enough", "where you are"];
-
-let quote;
-let beginningQuoteIndex, middleQuoteIndex, endQuoteIndex;
-
-beginningQuoteIndex = Math.floor(Math.random() * beginningQuote.length);
-middleQuoteIndex = Math.floor(Math.random() * middleQuote.length);
-endQuoteIndex = Math.floor(Math.random() * endQuote.length);
-
-quote = `${beginningQuote[beginningQuoteIndex]} ${middleQuote[middleQuoteIndex]} ${endQuote[endQuoteIndex]}`;
-
-console.log(quote); */
-
-
-
-
-let runQuote, motivationalQuote, inspirationalQuote, quoteNumber, quoteType;
-let beginningMotivationalIndex, middleMotivationalIndex, endMotivationalIndex, beginningInspirationalIndex, middleInspirationalIndex, endInspirationalIndex;
-let quote = [];
+// Step 1
+/* let motivationalQuote, beginningMotivationalIndex, middleMotivationalIndex, endMotivationalIndex;
 
 const motivationalQuoteText = {
-    beginningQuote : ["Whether you think you can", "The future is now", "Be who you are and say what you feel", "You only live once", "Do what you can"],
-    middleQuote : ["or whether you think you can't", "it's time to grow up and be strong", "because those who mind don't matter", "but if you do it right", "with what you have"],
-    endQuote : ["you're right", "tomorrow may well be too late", "and those who matter don't mind", "once is enough", "where you are"]
+    beginningQuote: ["Whether you think you can", "The future is now", "Be who you are and say what you feel", "You only live once", "Do what you can"],
+    middleQuote: ["or whether you think you can't", "it's time to grow up and be strong", "because those who mind don't matter", "but if you do it right", "with what you have"],
+    endQuote: ["you're right", "tomorrow may well be too late", "and those who matter don't mind", "once is enough", "where you are"]
+}
+
+// Generate random index number from the quote
+beginningMotivationalIndex = Math.floor(Math.random() * motivationalQuoteText.beginningQuote.length);
+middleMotivationalIndex = Math.floor(Math.random() * motivationalQuoteText.middleQuote.length);
+endMotivationalIndex = Math.floor(Math.random() * motivationalQuoteText.endQuote.length);
+
+motivationalQuote = `${motivationalQuoteText.beginningQuote[beginningMotivationalIndex]} ${motivationalQuoteText.middleQuote[middleMotivationalIndex]} ${motivationalQuoteText.endQuote[endMotivationalIndex]}`;
+
+displayMotivationalQuote();
+
+function displayMotivationalQuote() {
+    console.log(motivationalQuote); 
+} */
+
+
+// Work in progress
+// Step 2
+
+let quoteNumber, quoteType;
+let quotes = []
+
+const motivationalQuoteText = {
+    beginningQuote: ["Whether you think you can", "The future is now", "Be who you are and say what you feel", "You only live once", "Do what you can"],
+    middleQuote: ["or whether you think you can't", "it's time to grow up and be strong", "because those who mind don't matter", "but if you do it right", "with what you have"],
+    endQuote: ["you're right", "tomorrow may well be too late", "and those who matter don't mind", "once is enough", "where you are"]
 }
 
 const inspirationalQuoteText = {
@@ -32,61 +39,48 @@ const inspirationalQuoteText = {
     endQuote : ["and begin doing", "never give up", "open your eyes and your heart to a truly precious gift - today", "To the best you can do everyday", "and leave no stone unturned to make it a reality"]
 }
 
-/* beginningMotivationalIndex = Math.floor(Math.random() * motivationalQuoteText.beginningQuote.length);
-middleMotivationalIndex = Math.floor(Math.random() * motivationalQuoteText.middleQuote.length);
-endMotivationalIndex = Math.floor(Math.random() * motivationalQuoteText.endQuote.length);
-beginningInspirationalIndex = Math.floor(Math.random() * motivationalQuoteText.beginningQuote.length);
-middleMotivationalIndex = Math.floor(Math.random() * motivationalQuoteText.middleQuote.length);
-endMotivationalIndex = Math.floor(Math.random() * motivationalQuoteText.endQuote.length); */
-
-
-beginningMotivationalIndex = Math.floor(Math.random() * quoteNumber);
-middleMotivationalIndex = Math.floor(Math.random() * quoteNumber);
-endMotivationalIndex = Math.floor(Math.random() * quoteNumber);
-beginningInspirationalIndex = Math.floor(Math.random() * quoteNumber);
-middleMotivationalIndex = Math.floor(Math.random() * quoteNumber);
-endMotivationalIndex = Math.floor(Math.random() * quoteNumber);
-
-motivationalQuote = `${motivationalQuoteText.beginningQuote[beginningMotivationalIndex]} ${motivationalQuoteText.middleQuote[middleMotivationalIndex]} ${motivationalQuoteText.endQuote[endMotivationalIndex]}`;
-
-inspirationalQuote = `${inspirationalQuoteText.beginningQuote[beginningInspirationalIndex]} ${inspirationalQuoteText.middleQuote[middleInspirationalIndex]} ${inspirationalQuoteText.endQuote[endInspirationalIndex]}`;
-
-init();
-output();
-
-function output() {
-    if (quoteType === 1 || quoteType === 2) {
-        console.log(quote);
-    } else {
-        runQuote = false;
-    }
-}
+runQuoteNumber();
 
 function runQuoteNumber() {
     quoteNumber = parseInt(prompt('Please input the number of quote (1-5)')); 
 }
 
+runQuoteType();
+
 function runQuoteType() {
     quoteType = parseInt(prompt('Please input the Quote type (1 = Motivational or 2 = Inspirational)')); 
 }
 
-function displayMotivationalQuote() {
-    for (let i = 0; i <= quoteNumber; i++) {
-        if(quoteType === 1) {
-            quote.push(motivationalQuote);
-        } else {
-            quote.push(inspirationalQuote)
-        }      
-        return quote;    
+function chooseQuoteType () {
+    if (quoteType === 1) {
+        
     }
 }
 
-function init() {
-    runQuote = true;
-    runQuoteNumber(); 
-    console.log(quoteNumber);
-    runQuoteType();
-    console.log(quoteType);
-    console.log(beginningMotivationalIndex);
-    console.log(typeof beginningMotivationalIndex);
+
+displayMotivationalQuote();
+
+function displayMotivationalQuote() {
+    for (let i = 0; i < quoteNumber; i++) {
+        console.log(createQuote());       
+    }
+}
+
+// Function to create the quote
+function createQuote () {
+    let motivationalQuote, inspirationalQuote, beginningMotivationalIndex, middleMotivationalIndex, endMotivationalIndex, beginningInspirationalIndex, middleInspirationalIndex, endInspirationalIndex;
+
+    beginningMotivationalIndex = Math.floor(Math.random() * motivationalQuoteText.beginningQuote.length);
+    middleMotivationalIndex = Math.floor(Math.random() * motivationalQuoteText.middleQuote.length);
+    endMotivationalIndex = Math.floor(Math.random() * motivationalQuoteText.endQuote.length);
+
+    beginningInspirationalIndex = Math.floor(Math.random() * inspirationalQuoteText.beginningQuote.length);
+    middleInspirationalIndex = Math.floor(Math.random() * inspirationalQuoteText.middleQuote.length);
+    endInspirationalIndex = Math.floor(Math.random() * inspirationalQuoteText.endQuote.length);
+
+    motivationalQuote = `${motivationalQuoteText.beginningQuote[beginningMotivationalIndex]} ${motivationalQuoteText.middleQuote[middleMotivationalIndex]} ${motivationalQuoteText.endQuote[endMotivationalIndex]}`;
+
+    inspirationalQuote = `${motivationalQuoteText.beginningQuote[beginningMotivationalIndex]} ${motivationalQuoteText.middleQuote[middleMotivationalIndex]} ${motivationalQuoteText.endQuote[endMotivationalIndex]}`;
+
+    return motivationalQuote;
 }

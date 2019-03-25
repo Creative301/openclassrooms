@@ -88,32 +88,64 @@ function createQuote () {
 
 // Step 2 edited
 
-let quoteNumber, quoteType;
-let quotes = [];
+let runQuote, quoteNumber, quoteType;
 
-runQuoteNumber();
+init();
+chooseQuoteType();
+// output();
+
+// function output() {
+//     while (quoteType === 1) {
+//         loopMotivationalQuote();
+
+//         while (quoteType === 2) {
+//             loopInspirationalQuote()
+//         }    
+
+//         if (quoteType === 0 || quoteType > 2) {
+//             runQuote = false;
+//             break;
+//         }
+//     }
+// }
 
 function runQuoteNumber() {
     quoteNumber = parseInt(prompt('Please input the number of quote (1-5)')); 
 }
 
-runQuoteType();
-
 function runQuoteType() {
     quoteType = parseInt(prompt('Please input the quote type (1 = Motivational or 2 = Inspirational)')); 
 }
 
-chooseQuoteType();
-
 function chooseQuoteType() {
     if (quoteType === 1) {
-        for (let i = 0; i < quoteNumber; i++) {
-            console.log(displayMotivationalQuote());       
+        loopMotivationalQuote();
+        while (quoteType === 1) {
+            runQuoteNumber();
+            runQuoteType();
+            loopMotivationalQuote();
+        }
+    } else if (quoteType === 2) {
+        loopInspirationalQuote();
+        while (quoteType === 2) {
+            runQuoteNumber();
+            runQuoteType();
+            loopMotivationalQuote();
         }
     } else {
-        for (let i = 0; i < quoteNumber; i++) {
-            console.log(displayInspirationalQuote());     
-        }
+        runQuote = false;
+    }
+}
+
+function loopMotivationalQuote() {
+    for (let i = 0; i < quoteNumber; i++) {
+        console.log(displayMotivationalQuote());  
+    }
+}
+
+function loopInspirationalQuote() {
+    for (let i = 0; i < quoteNumber; i++) {
+        console.log(displayInspirationalQuote());     
     }
 }
 
@@ -134,7 +166,6 @@ function displayMotivationalQuote() {
     motivationalQuote = `${motivationalQuoteText.beginningQuote[beginningMotivationalIndex]} ${motivationalQuoteText.middleQuote[middleMotivationalIndex]} ${motivationalQuoteText.endQuote[endMotivationalIndex]}`;
  
     return motivationalQuote; 
-
 }
 
 // Function to generate random inspirational quote
@@ -154,4 +185,12 @@ function displayInspirationalQuote () {
     inspirationalQuote = `${inspirationalQuoteText.beginningQuote[beginningInspirationalIndex]} ${inspirationalQuoteText.middleQuote[middleInspirationalIndex]} ${inspirationalQuoteText.endQuote[endInspirationalIndex]}`;
 
     return inspirationalQuote;       
+}
+
+
+function init() {
+    runQuote = true;
+    runQuoteNumber();
+    runQuoteType();
+
 }

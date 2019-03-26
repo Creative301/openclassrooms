@@ -91,23 +91,43 @@ function createQuote () {
 let runQuote, quoteNumber, quoteType;
 
 init();
-chooseQuoteType();
-// output();
+// chooseQuoteType();
+output();
 
-// function output() {
-//     while (quoteType === 1) {
-//         loopMotivationalQuote();
+function output() {
+    while (quoteType === 1 && quoteNumber <= 5) {
+        loopMotivationalQuote();
+        runQuoteType();
+        runQuoteNumber();
 
-//         while (quoteType === 2) {
-//             loopInspirationalQuote()
-//         }    
+        while (quoteType === 2 && quoteNumber <= 5) {
+            loopInspirationalQuote();
+            runQuoteType();
+            runQuoteNumber();
+        }   
+        if (quoteType === 0 || quoteType > 2) {
+            runQuote = false;
+            break;
+        } 
+    }
+    while (quoteType === 2 && quoteNumber <= 5) {
+        loopInspirationalQuote();
+        runQuoteType();
+        runQuoteNumber();
+       
+        while (quoteType === 1 && quoteNumber <= 5) {
+            loopMotivationalQuote();
+            runQuoteType();
+            runQuoteNumber();
+        }   
+        if (quoteType === 0 || quoteType > 2) {
+            runQuote = false;
+            break;
+        } 
+    }
 
-//         if (quoteType === 0 || quoteType > 2) {
-//             runQuote = false;
-//             break;
-//         }
-//     }
-// }
+   
+}
 
 function runQuoteNumber() {
     quoteNumber = parseInt(prompt('Please input the number of quote (1-5)')); 
@@ -117,7 +137,7 @@ function runQuoteType() {
     quoteType = parseInt(prompt('Please input the quote type (1 = Motivational or 2 = Inspirational)')); 
 }
 
-function chooseQuoteType() {
+/* function chooseQuoteType() {
     if (quoteType === 1) {
         loopMotivationalQuote();
         while (quoteType === 1) {
@@ -130,12 +150,38 @@ function chooseQuoteType() {
         while (quoteType === 2) {
             runQuoteNumber();
             runQuoteType();
-            loopMotivationalQuote();
+            loopInspirationalQuote();
         }
     } else {
         runQuote = false;
     }
+} */
+
+/* function chooseQuoteType() {
+    if (quoteType === 1) {
+        loopMotivationalQuote();
+        runQuoteType();
+        runQuoteNumber();
+      
+        if (quoteType === 2) {
+            loopInspirationalQuote();
+            runQuoteNumber();
+            runQuoteType();
+    } else if(quoteType === 2) {
+        loopInspirationalQuote();
+        runQuoteType();
+        runQuoteNumber();
+        if (quoteType === 1) {
+            loopMotivationalQuote();
+            runQuoteNumber();
+            runQuoteType();
+        }
+    }  
+    else {
+        runQuote = false;
+    }
 }
+} */
 
 function loopMotivationalQuote() {
     for (let i = 0; i < quoteNumber; i++) {
@@ -175,7 +221,7 @@ function displayInspirationalQuote () {
     const inspirationalQuoteText = {
         beginningQuote : ["The way to get started", "Never stop dreaming", "Forget yesterday - it has already forgotten you", "You’re not obligated to win", "If you have a dream, don’t just sit there"],
         middleQuote : ["is to quit talking", "never stop believing", "don't sweat tomorrow - you haven't even met", "you’re obligated to keep trying", "gather courage to believe that you can succeed"],
-        endQuote : ["and begin doing", "never give up", "open your eyes and your heart to a truly precious gift - today", "To the best you can do everyday", "and leave no stone unturned to make it a reality"]
+        endQuote : ["and begin doing", "never give up", "open your eyes and your heart to a truly precious gift - today", "to the best you can do everyday", "and leave no stone unturned to make it a reality"]
     }
 
     beginningInspirationalIndex = Math.floor(Math.random() * inspirationalQuoteText.beginningQuote.length);
@@ -190,7 +236,6 @@ function displayInspirationalQuote () {
 
 function init() {
     runQuote = true;
-    runQuoteNumber();
     runQuoteType();
-
+    runQuoteNumber();
 }

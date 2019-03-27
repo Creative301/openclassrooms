@@ -83,29 +83,40 @@ function displayQuote() {
 
 function confirmation() {
     quoteConfirmation = parseInt(prompt('Do you want to continue or exit (1 = continue or 0 = exit)'));
-    if (quoteConfirmation !== 1 || quoteConfirmation !== 0) {
+    if (quoteConfirmation < 0 || quoteConfirmation > 1) {
         alert('Please input 1 to continue or 0 to exit');
     }
+    runQuoteType();
+    runQuoteNumber();
 }
 
 function runQuoteType() {
     quoteType = parseInt(prompt('Please input the quote type (1 = Motivational or 2 = Inspirational)')); 
+    console.log(quoteType);
+    quoteTypeCheck();
 }
 
 function quoteTypeCheck() {
-    if (quoteType !== 1 || quoteType !== 2) {
+    if (quoteType < 1 || quoteType > 2) {
         alert('Please input 1 to select the motivational quote or 2 to select the inspirational quote');
     }
 }
 
 function runQuoteNumber() {
     quoteNumber = parseInt(prompt('Please input the number of quote (1-5)')); 
+    console.log(quoteNumber);
+    quoteNumberCheck();
 }
 
 function quoteNumberCheck() {
     if (quoteNumber < 1 || quoteNumber >5) {
         alert('Please input number between 1 to 5');
     }
+}
+
+// Function to generate random number from the quote length
+function generateRandomIndexNumber(index) {
+    return Math.floor(Math.random() * index);
 }
 
 
@@ -119,9 +130,9 @@ function generateMotivationalQuote() {
         endQuote: ["you're right", "tomorrow may well be too late", "and those who matter don't mind", "once is enough", "where you are"]
     }
 
-    beginningMotivationalIndex = Math.floor(Math.random() * motivationalQuoteText.beginningQuote.length);
-    middleMotivationalIndex = Math.floor(Math.random() * motivationalQuoteText.middleQuote.length);
-    endMotivationalIndex = Math.floor(Math.random() * motivationalQuoteText.endQuote.length);
+    beginningMotivationalIndex = generateRandomIndexNumber(motivationalQuoteText.beginningQuote.length);
+    middleMotivationalIndex = generateRandomIndexNumber(motivationalQuoteText.middleQuote.length);
+    endMotivationalIndex = generateRandomIndexNumber(motivationalQuoteText.endQuote.length);
 
     motivationalQuote = `${motivationalQuoteText.beginningQuote[beginningMotivationalIndex]} ${motivationalQuoteText.middleQuote[middleMotivationalIndex]} ${motivationalQuoteText.endQuote[endMotivationalIndex]}`;
  
@@ -138,9 +149,9 @@ function generateInspirationalQuote () {
         endQuote : ["and begin doing", "never give up", "open your eyes and your heart to a truly precious gift - today", "to the best you can do everyday", "and leave no stone unturned to make it a reality"]
     }
 
-    beginningInspirationalIndex = Math.floor(Math.random() * inspirationalQuoteText.beginningQuote.length);
-    middleInspirationalIndex = Math.floor(Math.random() * inspirationalQuoteText.middleQuote.length);
-    endInspirationalIndex = Math.floor(Math.random() * inspirationalQuoteText.endQuote.length);
+    beginningInspirationalIndex = generateRandomIndexNumber(inspirationalQuoteText.beginningQuote.length);
+    middleInspirationalIndex = generateRandomIndexNumber(inspirationalQuoteText.middleQuote.length);
+    endInspirationalIndex = generateRandomIndexNumber(inspirationalQuoteText.endQuote.length);
 
     inspirationalQuote = `${inspirationalQuoteText.beginningQuote[beginningInspirationalIndex]} ${inspirationalQuoteText.middleQuote[middleInspirationalIndex]} ${inspirationalQuoteText.endQuote[endInspirationalIndex]}`;
 
@@ -150,6 +161,5 @@ function generateInspirationalQuote () {
 function init() {
     runQuote = true;
     runQuoteType();
-    quoteTypeCheck();
     runQuoteNumber();
 }

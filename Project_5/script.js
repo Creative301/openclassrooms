@@ -80,7 +80,6 @@ function displayQuote() {
 
     } else {
         runQuote = false;
-        console.log('Your input in incorrect');
     } 
 }
 
@@ -93,7 +92,7 @@ function confirmation() {
         output();
     } else {
         runQuote = false;
-        console.log('You have choose to exit from the app');
+        console.log('You have chosen to exit from the app');
     } 
 }
 
@@ -104,7 +103,7 @@ function runQuoteType() {
 
 function promptQuoteType() {
     quoteType = parseInt(prompt('Please input the quote type (1 = Motivational or 2 = Inspirational)')); 
-    while (quoteType < 1 || quoteType > 2) {
+    while (quoteType < 1 || quoteType > 2 || quoteType === '' || isNaN(quoteType)) {
         alert('Please input 1 to select the motivational quote or 2 to select the inspirational quote');
         promptQuoteType();
     }
@@ -114,15 +113,15 @@ function promptQuoteType() {
 function runQuoteNumber() {
     promptQuoteNumber();
     console.log(quoteNumber);
-    while (quoteNumber < 1 || quoteNumber > 5) {
+/*     while (quoteNumber < 1 || quoteNumber > 5) {
         alert('Please input number between 1 to 5');
         promptQuoteNumber();
-    }
+    } */
 }
 
 function promptQuoteNumber() {
     quoteNumber = parseInt(prompt('Please input the number of quote (1-5)')); 
-    while (quoteNumber < 1 || quoteNumber > 5) {
+    while (quoteNumber < 1 || quoteNumber > 5 || quoteNumber === '' || isNaN(quoteNumber)) {
         alert('Please input number between 1 to 5');
         promptQuoteNumber();
     }

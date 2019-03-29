@@ -26,45 +26,29 @@ let runQuote, quoteNumber, quoteType, quoteConfirmation;
 
 init();
 
-
-/* function output() {
-    while (quoteType === 1 && quoteNumber <= 5) {
-        loopMotivationalQuote();
-        runQuoteType();
-        runQuoteNumber();
-
-        while (quoteType === 2 && quoteNumber <= 5) {
-            loopInspirationalQuote();
-            runQuoteType();
-            runQuoteNumber();
-        }   
-        if (quoteType === 0 || quoteType > 2) {
-            runQuote = false;
-            break;
-        } 
-    }
-    while (quoteType === 2 && quoteNumber <= 5) {
-        loopInspirationalQuote();
-        runQuoteType();
-        runQuoteNumber();
-       
-        while (quoteType === 1 && quoteNumber <= 5) {
-            loopMotivationalQuote();
-            runQuoteType();
-            runQuoteNumber();
-        }   
-        if (quoteType === 0 || quoteType > 2) {
-            runQuote = false;
-            break;
-        } 
-    }  
-} */
-
 function output() {
-    runQuoteType();
-    runQuoteNumber();
+    promptQuoteType();
+    promptQuoteNumber();
     displayQuote();
     confirmation();
+}
+
+function promptQuoteType() {
+    quoteType = parseInt(prompt('Please input the quote type (1 = Motivational or 2 = Inspirational)')); 
+    while (quoteType < 1 || quoteType > 2 || quoteType === '' || isNaN(quoteType)) {
+        alert('Please input 1 to select the motivational quote or 2 to select the inspirational quote');
+        promptQuoteType();
+    }
+    return quoteType;
+}
+
+function promptQuoteNumber() {
+    quoteNumber = parseInt(prompt('Please input the number of quote (1-5)')); 
+    while (quoteNumber < 1 || quoteNumber > 5 || quoteNumber === '' || isNaN(quoteNumber)) {
+        alert('Please input number between 1 to 5');
+        promptQuoteNumber();
+    }
+    return quoteNumber;
 }
 
 function displayQuote() {
@@ -83,56 +67,24 @@ function displayQuote() {
     } 
 }
 
+// Function to show continue or exit confirmation
 function confirmation() {
     quoteConfirmation = parseInt(prompt('Do you want to continue or exit (1 = continue or 0 = exit)'));
-    if (quoteConfirmation < 0 || quoteConfirmation > 1) {
+    while (quoteConfirmation < 0 || quoteConfirmation > 1 || quoteConfirmation === '' || isNaN(quoteConfirmation)) {
         alert('Please input 1 to continue or 0 to exit');
+        confirmation();
     }
     if (quoteConfirmation === 1) {
         output();
     } else {
         runQuote = false;
-        console.log('You have chosen to exit from the app');
-    } 
-}
-
-function runQuoteType() {
-    promptQuoteType();
-    console.log(quoteType);
-}
-
-function promptQuoteType() {
-    quoteType = parseInt(prompt('Please input the quote type (1 = Motivational or 2 = Inspirational)')); 
-    while (quoteType < 1 || quoteType > 2 || quoteType === '' || isNaN(quoteType)) {
-        alert('Please input 1 to select the motivational quote or 2 to select the inspirational quote');
-        promptQuoteType();
     }
-    return quoteType;
-}
-
-function runQuoteNumber() {
-    promptQuoteNumber();
-    console.log(quoteNumber);
-/*     while (quoteNumber < 1 || quoteNumber > 5) {
-        alert('Please input number between 1 to 5');
-        promptQuoteNumber();
-    } */
-}
-
-function promptQuoteNumber() {
-    quoteNumber = parseInt(prompt('Please input the number of quote (1-5)')); 
-    while (quoteNumber < 1 || quoteNumber > 5 || quoteNumber === '' || isNaN(quoteNumber)) {
-        alert('Please input number between 1 to 5');
-        promptQuoteNumber();
-    }
-    return quoteNumber;
 }
 
 // Function to generate random number from the quote length
 function generateRandomIndexNumber(index) {
     return Math.floor(Math.random() * index);
 }
-
 
 // Function to generate random motivational quote
 function generateMotivationalQuote() {

@@ -1,27 +1,3 @@
-// Step 1
-/* let motivationalQuote, beginningMotivationalIndex, middleMotivationalIndex, endMotivationalIndex;
-
-const motivationalQuoteText = {
-    beginningQuote: ["Whether you think you can", "The future is now", "Be who you are and say what you feel", "You only live once", "Do what you can"],
-    middleQuote: ["or whether you think you can't", "it's time to grow up and be strong", "because those who mind don't matter", "but if you do it right", "with what you have"],
-    endQuote: ["you're right", "tomorrow may well be too late", "and those who matter don't mind", "once is enough", "where you are"]
-}
-
-// Generate random index number from the quote
-beginningMotivationalIndex = Math.floor(Math.random() * motivationalQuoteText.beginningQuote.length);
-middleMotivationalIndex = Math.floor(Math.random() * motivationalQuoteText.middleQuote.length);
-endMotivationalIndex = Math.floor(Math.random() * motivationalQuoteText.endQuote.length);
-
-motivationalQuote = `${motivationalQuoteText.beginningQuote[beginningMotivationalIndex]} ${motivationalQuoteText.middleQuote[middleMotivationalIndex]} ${motivationalQuoteText.endQuote[endMotivationalIndex]}`;
-
-displayMotivationalQuote();
-
-function displayMotivationalQuote() {
-    console.log(motivationalQuote); 
-} */
-
-
-// Step 2
 let runQuote, quoteNumber, quoteType, quoteConfirmation;
 
 init();

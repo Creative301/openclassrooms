@@ -1,33 +1,12 @@
 let runQuote, quoteNumber, quoteType, quoteConfirmation;
 
-init();
+runQuote = true;
+
+output();
 
 function output() {
     promptQuoteType();
     promptQuoteNumber();
-    displayQuote();
-    confirmation();
-}
-
-function promptQuoteType() {
-    quoteType = parseInt(prompt('Please input the quote type (1 = Motivational or 2 = Inspirational)')); 
-    while (quoteType < 1 || quoteType > 2 || quoteType === '' || isNaN(quoteType)) {
-        alert('Please input 1 to select the motivational quote or 2 to select the inspirational quote');
-        promptQuoteType();
-    }
-    return quoteType;
-}
-
-function promptQuoteNumber() {
-    quoteNumber = parseInt(prompt('Please input the number of quote (1-5)')); 
-    while (quoteNumber < 1 || quoteNumber > 5 || quoteNumber === '' || isNaN(quoteNumber)) {
-        alert('Please input number between 1 to 5');
-        promptQuoteNumber();
-    }
-    return quoteNumber;
-}
-
-function displayQuote() {
     if (quoteType === 1 && quoteNumber <= 5) {
         for (let i = 0; i < quoteNumber; i++) {
             console.log(generateMotivationalQuote());  
@@ -38,10 +17,27 @@ function displayQuote() {
             console.log(generateInspirationalQuote());     
         }
 
-    } else {
-        runQuote = false;
-    } 
+    }
+    confirmation();
 }
+
+function promptQuoteType() {
+quoteType = parseInt(prompt('Please input the quote type (1 = Motivational or 2 = Inspirational)')); 
+while (quoteType < 1 || quoteType > 2 || quoteType === '' || isNaN(quoteType)) {
+    alert('Please input 1 to select the motivational quote or 2 to select the inspirational quote');
+    promptQuoteType();
+}
+}
+
+function promptQuoteNumber() {
+quoteNumber = parseInt(prompt('Please input the number of quote (1-5)')); 
+while (quoteNumber < 1 || quoteNumber > 5 || quoteNumber === '' || isNaN(quoteNumber)) {
+    alert('Please input number between 1 to 5');
+    promptQuoteNumber();
+}
+}
+
+
 
 // Function to show continue or exit confirmation
 function confirmation() {
@@ -100,7 +96,3 @@ function generateInspirationalQuote () {
     return inspirationalQuote;       
 }
 
-function init() {
-    runQuote = true;
-    output();
-}

@@ -56,7 +56,7 @@ function generateMotivationalQuote() {
     const motivationalQuoteText = {
         beginningQuote: ["Whether you think you can", "The future is now", "Be who you are and say what you feel", "You only live once", "Do what you can"],
         middleQuote: ["or whether you think you can't", "it's time to grow up and be strong", "because those who mind don't matter", "but if you do it right", "with what you have"],
-        endQuote: ["you're right", "tomorrow may well be too late", "and those who matter don't mind", "once is enough", "where you are"]
+        endQuote: ["you're right.", "tomorrow may well be too late.", "and those who matter don't mind.", "once is enough.", "where you are."]
     }
 
     beginningMotivationalIndex = generateRandomIndexNumber(motivationalQuoteText.beginningQuote.length);
@@ -75,7 +75,7 @@ function generateInspirationalQuote() {
     const inspirationalQuoteText = {
         beginningQuote : ["The way to get started", "Never stop dreaming", "Forget yesterday - it has already forgotten you", "You’re not obligated to win", "If you have a dream, don’t just sit there"],
         middleQuote : ["is to quit talking", "never stop believing", "don't sweat tomorrow - you haven't even met", "you’re obligated to keep trying", "gather courage to believe that you can succeed"],
-        endQuote : ["and begin doing", "never give up", "open your eyes and your heart to a truly precious gift - today", "to the best you can do everyday", "and leave no stone unturned to make it a reality"]
+        endQuote : ["and begin doing.", "never give up.", "open your eyes and your heart to a truly precious gift - today.", "to the best you can do everyday.", "and leave no stone unturned to make it a reality."]
     }
 
     beginningInspirationalIndex = generateRandomIndexNumber(inspirationalQuoteText.beginningQuote.length);

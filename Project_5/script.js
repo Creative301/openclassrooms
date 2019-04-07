@@ -14,19 +14,19 @@ function output() {
 }
 
 function promptQuoteType() {
-quoteType = parseInt(prompt('Please input the quote type (1 = Motivational or 2 = Inspirational)')); 
-while (quoteType < 1 || quoteType > 2 || quoteType === '' || isNaN(quoteType)) {
-    alert('Please input 1 to select the motivational quote or 2 to select the inspirational quote');
-    promptQuoteType();
-}
+    quoteType = parseInt(prompt('Please input the quote type (1 = Motivational or 2 = Inspirational)'));
+    while (quoteType < 1 || quoteType > 2 || quoteType === '' || isNaN(quoteType)) {
+        alert('Please input 1 to select the motivational quote or 2 to select the inspirational quote');
+        promptQuoteType();
+    }
 }
 
 function promptQuoteNumber() {
-quoteNumber = parseInt(prompt('Please input the number of quote (1-5)')); 
-while (quoteNumber < 1 || quoteNumber > 5 || quoteNumber === '' || isNaN(quoteNumber)) {
-    alert('Please input number between 1 to 5');
-    promptQuoteNumber();
-}
+    quoteNumber = parseInt(prompt('Please input the number of quote (1-5)'));
+    while (quoteNumber < 1 || quoteNumber > 5 || quoteNumber === '' || isNaN(quoteNumber)) {
+        alert('Please input number between 1 to 5');
+        promptQuoteNumber();
+    }
 }
 
 // Continue or exit confirmation
@@ -65,7 +65,7 @@ function generateMotivationalQuote() {
 
     motivationalQuote = `${motivationalQuoteText.beginningQuote[beginningMotivationalIndex]} ${motivationalQuoteText.middleQuote[middleMotivationalIndex]} ${motivationalQuoteText.endQuote[endMotivationalIndex]}`;
 
-    return motivationalQuote; 
+    return motivationalQuote;
 }
 
 // Generate random inspirational quote
@@ -73,9 +73,9 @@ function generateInspirationalQuote() {
     let inspirationalQuote, beginningInspirationalIndex, middleInspirationalIndex, endInspirationalIndex;
 
     const inspirationalQuoteText = {
-        beginningQuote : ["The way to get started", "Never stop dreaming", "Forget yesterday - it has already forgotten you", "You’re not obligated to win", "If you have a dream, don’t just sit there"],
-        middleQuote : ["is to quit talking", "never stop believing", "don't sweat tomorrow - you haven't even met", "you’re obligated to keep trying", "gather courage to believe that you can succeed"],
-        endQuote : ["and begin doing.", "never give up.", "open your eyes and your heart to a truly precious gift - today.", "to the best you can do everyday.", "and leave no stone unturned to make it a reality."]
+        beginningQuote: ["The way to get started", "Never stop dreaming", "Forget yesterday - it has already forgotten you", "You’re not obligated to win", "If you have a dream, don’t just sit there"],
+        middleQuote: ["is to quit talking", "never stop believing", "don't sweat tomorrow - you haven't even met", "you’re obligated to keep trying", "gather courage to believe that you can succeed"],
+        endQuote: ["and begin doing.", "never give up.", "open your eyes and your heart to a truly precious gift - today.", "to the best you can do everyday.", "and leave no stone unturned to make it a reality."]
     }
 
     beginningInspirationalIndex = generateRandomIndexNumber(inspirationalQuoteText.beginningQuote.length);
@@ -84,19 +84,19 @@ function generateInspirationalQuote() {
 
     inspirationalQuote = `${inspirationalQuoteText.beginningQuote[beginningInspirationalIndex]} ${inspirationalQuoteText.middleQuote[middleInspirationalIndex]} ${inspirationalQuoteText.endQuote[endInspirationalIndex]}`;
 
-    return inspirationalQuote;       
+    return inspirationalQuote;
 }
 
 function displayQuote() {
     if (quoteType === 1 && quoteNumber <= 5) {
         for (let i = 0; i < quoteNumber; i++) {
-            motivationalQuoteOutputArr.push(generateMotivationalQuote()); 
+            motivationalQuoteOutputArr.push(generateMotivationalQuote());
         }
         alert(motivationalQuoteOutputArr.join('\r\n'));
         motivationalQuoteOutputArr = [];
     } else if (quoteType === 2 && quoteNumber <= 5) {
         for (let i = 0; i < quoteNumber; i++) {
-            inspirationalQuoteOutputArr.push(generateInspirationalQuote()); 
+            inspirationalQuoteOutputArr.push(generateInspirationalQuote());
         }
         alert(inspirationalQuoteOutputArr.join('\r\n'));
         inspirationalQuoteOutputArr = [];

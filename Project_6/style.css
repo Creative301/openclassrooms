@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  
+  html {
+    box-sizing: border-box;
+
+  }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+
+#game {
+    display: inline-block;
+}
+
+.col {
+    border: 1px solid #333;
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    background-color: #fff;
+}
+
+.row {
+    height: 60px;
+}

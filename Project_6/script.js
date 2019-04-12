@@ -6,10 +6,12 @@ class Game {
       this.player = 'one';
       this.isGameOver = false;
       this.createGrid();
-      // this.setupEventListeners();
+      this.setupEventListeners();
+      this.generateRandomRowNumber(); 
       this.onPlayerMove = function() {}
     }
 
+    // Create the grid
     createGrid() {
       const $board = $(this.selector);
       this.isGameOver = false;
@@ -24,6 +26,35 @@ class Game {
       }
     }
 
+    addPlayer() {
+
+    }
+    
+  /*   generateRandomRowNumber(index) {
+      return Math.floor(Math.random() * index);
+    } */
+
+    generateRandomRowNumber() {
+      console.log(Math.floor(Math.random() * this.ROWS));
+    }
+    generateRandomRowNumber();
+    // console.log(generateRandomRowNumber(this.ROWS));
+
+    generateRandomColNumber() {
+      return Math.floor(Math.random() * this.COLS);
+    }
+
+
+    setupEventListeners() {
+      const $board = $(this.selector);
+
+      $board.on('mouseenter', '.col.empty', function() {
+        const col = $(this).data('col');
+        const row = $(this).data('row');
+
+        console.log(col, row);
+      })
+    }
 
 
 

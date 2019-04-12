@@ -1,4 +1,4 @@
-let runQuote, quoteNumber, quoteType, quoteConfirmation;
+let runQuote, quoteType, quoteNumber, quoteConfirmation;
 let motivationalQuoteOutputArr = [];
 let inspirationalQuoteOutputArr = [];
 
@@ -29,9 +29,27 @@ function promptQuoteNumber() {
     }
 }
 
+function displayQuote() {
+    if (quoteType === 1 && quoteNumber <= 5) {
+        for (let i = 0; i < quoteNumber; i++) {
+            motivationalQuoteOutputArr.push(generateMotivationalQuote());
+        }
+        alert(motivationalQuoteOutputArr.join('\r\n'));
+        motivationalQuoteOutputArr = [];
+    } else if (quoteType === 2 && quoteNumber <= 5) {
+        for (let i = 0; i < quoteNumber; i++) {
+            inspirationalQuoteOutputArr.push(generateInspirationalQuote());
+        }
+        alert(inspirationalQuoteOutputArr.join('\r\n'));
+        inspirationalQuoteOutputArr = [];
+    } else {
+        runQuote = false;
+    }
+}
+
 // Continue or exit confirmation
 function confirmation() {
-    quoteConfirmation = parseInt(prompt('Do you want to continue or exit (1 = continue or 0 = exit)'));
+    quoteConfirmation = parseInt(prompt('Do you want to continue or exit (1 = Continue or 0 = Exit)'));
     while (quoteConfirmation < 0 || quoteConfirmation > 1 || quoteConfirmation === '' || isNaN(quoteConfirmation)) {
         alert('Please input 1 to continue or 0 to exit');
         confirmation();
@@ -44,7 +62,6 @@ function confirmation() {
     }
 }
 
-// Generate random number from the quote length
 function generateRandomIndexNumber(index) {
     return Math.floor(Math.random() * index);
 }
@@ -85,22 +102,4 @@ function generateInspirationalQuote() {
     inspirationalQuote = `${inspirationalQuoteText.beginningQuote[beginningInspirationalIndex]} ${inspirationalQuoteText.middleQuote[middleInspirationalIndex]} ${inspirationalQuoteText.endQuote[endInspirationalIndex]}`;
 
     return inspirationalQuote;
-}
-
-function displayQuote() {
-    if (quoteType === 1 && quoteNumber <= 5) {
-        for (let i = 0; i < quoteNumber; i++) {
-            motivationalQuoteOutputArr.push(generateMotivationalQuote());
-        }
-        alert(motivationalQuoteOutputArr.join('\r\n'));
-        motivationalQuoteOutputArr = [];
-    } else if (quoteType === 2 && quoteNumber <= 5) {
-        for (let i = 0; i < quoteNumber; i++) {
-            inspirationalQuoteOutputArr.push(generateInspirationalQuote());
-        }
-        alert(inspirationalQuoteOutputArr.join('\r\n'));
-        inspirationalQuoteOutputArr = [];
-    } else {
-        runQuote = false;
-    }
 }

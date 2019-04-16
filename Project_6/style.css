@@ -20,9 +20,15 @@ body {
     text-align: center;
 }
 
-#game {
+#board {
     display: inline-block;
 }
+
+.row {
+  /* height: 60px; */
+  font-size: 0px;
+}
+
 
 .col {
     border: 1px solid #333;
@@ -32,6 +38,8 @@ body {
     background-color: #fff;
 }
 
-.row {
-    height: 60px;
+.col.empty.obstacles {
+  background-color: red;
 }
+
+/* 13.56 */

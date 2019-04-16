@@ -20,6 +20,10 @@ class Game {
         const $row = $('<div>').addClass('row');
         for (let col = 0; col < this.COLS; col++) {
           const $col = $('<div>').addClass('col empty').attr('data-col', col).attr('data-row', row);
+          // Generate random obstacles
+          if (Math.random() < 0.1) {
+            $col.addClass('obstacles');
+          }
           $row.append($col);
         }
         $board.append($row);
@@ -34,10 +38,11 @@ class Game {
       return Math.floor(Math.random() * index);
     } */
 
-    generateRandomRowNumber() {
+/*     generateRandomRowNumber() {
       console.log(Math.floor(Math.random() * this.ROWS));
-    }
-    generateRandomRowNumber();
+    } */
+
+    // generateRandomRowNumber();
     // console.log(generateRandomRowNumber(this.ROWS));
 
     generateRandomColNumber() {
@@ -63,5 +68,5 @@ class Game {
 
 
 $(document).ready(function () {
-  const game = new Game('#game');
+  const game = new Game('#board');
 });

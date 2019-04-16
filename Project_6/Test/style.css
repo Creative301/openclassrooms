@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  
+  html {
+    box-sizing: border-box;
+
+  }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+
+#board {
+  border: 1px solid #333;
+  display: inline-block;
+}
+
+.row {
+  font-size: 0;
+}
+
+.col {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: #eee;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  vertical-align: top;
+  font-size: 20px;
+  line-height: 50px;
+  transition: all .7s;
+}
+
+.row:last-child {
+  border-bottom: 0;
+}
+
+.col.hidden {
+  background-color: #59aec7;
+  cursor: pointer;
+}
+
+.col.hidden:hover {
+  background-color: #eee;
+}
+
+
+/* Show the mine */
+/* .col.hidden.mine {
+  background-color: red;
+} */
+
+/* Fix white border */
+.row:last-child .col {
+  border-bottom: none;
+}
+
+.row .col:last-child {
+  border-right: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

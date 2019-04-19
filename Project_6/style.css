@@ -21,14 +21,13 @@ body {
 }
 
 #board {
+  margin-top: 30px;
     display: inline-block;
 }
 
 .row {
-  /* height: 60px; */
   font-size: 0px;
 }
-
 
 .col {
     border: 1px solid #333;
@@ -38,8 +37,14 @@ body {
     background-color: #fff;
 }
 
-.col.empty.obstacles {
-  background-color: red;
+.col.obstacles {
+  background-color: lightcoral;
 }
 
-/* 13.56 */
+.col.pOne {
+  background-color: lightblue;
+}
+
+.col.pTwo {
+  background-color: lightgreen;
+}

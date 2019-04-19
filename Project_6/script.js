@@ -1,14 +1,15 @@
 class Game {
     constructor(selector) {
-      this.ROWS = 9;
+      this.ROWS = 10;
       this.COLS = 10;
       this.selector = selector;
       this.player = 'one';
       this.isGameOver = false;
       this.createGrid();
+      this.addPlayerOne();
+      this.addPlayerTwo();
       this.setupEventListeners();
-      this.generateRandomRowNumber(); 
-      this.onPlayerMove = function() {}
+      this.onPlayerMove = () => {};
     }
 
     // Create the grid
@@ -19,7 +20,11 @@ class Game {
       for (let row = 0; row < this.ROWS; row++) {
         const $row = $('<div>').addClass('row');
         for (let col = 0; col < this.COLS; col++) {
-          const $col = $('<div>').addClass('col empty').attr('data-col', col).attr('data-row', row);
+          const $col = $('<div>')
+          .addClass('col')
+          .attr('data-col', col)
+          .attr('data-row', row);
+
           // Generate random obstacles
           if (Math.random() < 0.1) {
             $col.addClass('obstacles');
@@ -28,27 +33,7 @@ class Game {
         }
         $board.append($row);
       }
-    }
-
-    addPlayer() {
-
-    }
-    
-  /*   generateRandomRowNumber(index) {
-      return Math.floor(Math.random() * index);
-    } */
-
-/*     generateRandomRowNumber() {
-      console.log(Math.floor(Math.random() * this.ROWS));
-    } */
-
-    // generateRandomRowNumber();
-    // console.log(generateRandomRowNumber(this.ROWS));
-
-    generateRandomColNumber() {
-      return Math.floor(Math.random() * this.COLS);
-    }
-
+    }    
 
     setupEventListeners() {
       const $board = $(this.selector);

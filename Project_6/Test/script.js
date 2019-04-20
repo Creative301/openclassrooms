@@ -1,3 +1,5 @@
+// Minesweeper game
+
 const $board = $('#board');
 const ROWS = 10;
 const COLS = 10;

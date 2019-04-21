@@ -55,3 +55,7 @@ body {
   width: 42px;
   height: 46px;
 }
+
+.red {
+  background-color: red;
+}

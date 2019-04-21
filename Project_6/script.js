@@ -43,7 +43,7 @@ class Game {
       const col = $(this).data("col");
       const row = $(this).data("row");
 
-      console.log(col, row);
+      // console.log(col, row);
     });
   }
 
@@ -57,9 +57,13 @@ class Game {
   }
 
   test() {
-/*     let colNum = generateRandomColNum().toString();
-    console.log($("input[value='data-row']"));
-    console.log(colNum); */
+    const playerOne = '<div id = "playerOne"></div>';
+    let randomColNum = this.generateRandomColNum();
+    let randomROwNum = this.generateRandomRowNum();
+    let $cell = $(`.col[data-col=${randomColNum}][data-row=${randomROwNum}]`)
+    console.log($cell);
+    // $cell.addClass('playerOne');
+    $cell.append(playerOne);
   }
 
 /*   addPlayerOne() {

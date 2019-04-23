@@ -41,21 +41,11 @@ body {
   background-color: lightslategray;
 }
 
-.col.playerOne {
-  background-color: lightblue;
-}
-
-.col.playerTwo {
-  background-color: lightgreen;
-}
-
 #playerOne {
   position: absolute;
+  top: 0px;
+  left: 0px;
   background: url(Assets/tank_green.png) no-repeat;
   width: 42px;
   height: 46px;
-}
-
-.red {
-  background-color: red;
 }

@@ -37,7 +37,9 @@ body {
   background-color: #fff;
 }
 
-.col.obstacles {
+.obstacles {
+  width: 45px;
+  height: 45px;
   background-color: lightslategray;
 }
 

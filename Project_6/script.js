@@ -1,16 +1,15 @@
+let rows = 10;
+let cols = 10;
+
 class Game {
   constructor(selector) {
-    this.ROWS = 10;
-    this.COLS = 10;
+    this.ROWS = rows;
+    this.COLS = cols;
     this.selector = selector;
     this.player = "one";
     this.isGameOver = false;
     this.createGrid();
     this.setupEventListeners();
-    this.generateRandomColNum();
-    this.generateRandomRowNum();
-    this.addPlayerOne();
-    this.movePlayer();
   }
 
   // Create the grid
@@ -48,6 +47,17 @@ class Game {
       // console.log(col, row);
     });
   }
+}
+
+class Player {
+  constructor() {
+    this.ROWS = rows;
+    this.COLS = cols;
+    this.generateRandomColNum();
+    this.generateRandomRowNum();
+    this.addPlayerOne();
+    this.movePlayer();
+  }
 
   generateRandomColNum() {
     return Math.floor(Math.random() * this.COLS);
@@ -67,70 +77,50 @@ class Game {
     $cell.append(playerOne);
   }
 
-  // Move the player
-  movePlayer(e) {
+  movePlayer() {
     let offset = [0, 0];
-    let playerOne = $("#playerOne");
+    let divOverlay = document.getElementById("playerOne");
     let isDown = false;
-    playerOne.mousedown(e => {
-      isDown = true;
-      offset = [
-        playerOne.offsetLeft - e.clientX,
-        playerOne.offsetTop - e.clientY
-      ];
-    }, false);
+    divOverlay.addEventListener(
+      "mousedown",
+      function(e) {
+        isDown = true;
+        offset = [
+          divOverlay.offsetLeft - e.clientX,
+          divOverlay.offsetTop - e.clientY
+        ];
+      },
+      false
+    );
+    document.addEventListener(
+      "mouseup",
+      function() {
+        isDown = false;
+      },
+      false
+    );
 
-    playerOne.mouseup(() => {
-      isDown = false;
-    }, false);
+    document.addEventListener(
+      "mousemove",
+      function(e) {
+        e.preventDefault();
+        if (isDown) {
+          divOverlay.style.left = e.clientX + offset[0] + "px";
+          divOverlay.style.top = e.clientY + offset[1] + "px";
+        }
 
-    playerOne.mousemove(e => {
-      event.preventDefault();
-      if (isDown) {
-        playerOne.style.left = e.clientX + offset[0] + "px";
-        playerOne.style.top = e.clientY + offset[1] + "px";
-      }
-    }, false);
+        /*         if() {
+
+        } */
+      },
+      false
+    );
   }
 }
 
 $(document).ready(function() {
   const game = new Game("#board");
-
-  // Move the player
-  /* let offset = [0, 0];
-  let divOverlay = document.getElementById("playerOne");
-  let isDown = false;
-  divOverlay.addEventListener(
-    "mousedown",
-    function(e) {
-      isDown = true;
-      offset = [
-        divOverlay.offsetLeft - e.clientX,
-        divOverlay.offsetTop - e.clientY
-      ];
-    },
-    false
-  );
-  document.addEventListener(
-    "mouseup",
-    function() {
-      isDown = false;
-    },
-    false
-  );
-
-  document.addEventListener(
-    "mousemove",
-    function(e) {
-      event.preventDefault();
-      if (isDown) {
-        divOverlay.style.left = e.clientX + offset[0] + "px";
-        divOverlay.style.top = e.clientY + offset[1] + "px";
-      }
-    },
-    false
-  ); */
+  const player = new Player("#board");
 });
 
 // Limit player movement
